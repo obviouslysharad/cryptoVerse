@@ -40,7 +40,7 @@ const Header = () => {
 
   return (
     <ThemeProvider theme={darkTheme}>
-      <AppBar color="primary" position="static">
+      <AppBar color="transparent" position="static">
         <Container>
           <Toolbar>
             <Typography
@@ -54,6 +54,7 @@ const Header = () => {
               value={""}
               className={useStyles().select}
               variant="outlined"
+              value={currency}
               onChange={(e) => {
                 setCurrency(e.target.value);
               }}
