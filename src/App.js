@@ -1,4 +1,4 @@
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Header from "./components/Header";
 import Homepage from "./components/Homepage";
@@ -8,8 +8,10 @@ function App() {
   return (
     <BrowserRouter>
       <Header />
-      <Route path="/" components={Homepage} />
-      <Route path="/coins/:id" components={CoinPage} exact />
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/coins/:id" element={<CoinPage />} exact />
+      </Routes>
     </BrowserRouter>
   );
 }
